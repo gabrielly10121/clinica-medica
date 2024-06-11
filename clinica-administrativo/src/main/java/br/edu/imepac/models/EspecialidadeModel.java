@@ -13,5 +13,5 @@ public class EspecialidadeModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String Nome;
-    private String Descicao;
+    private String Descricao;
 }
