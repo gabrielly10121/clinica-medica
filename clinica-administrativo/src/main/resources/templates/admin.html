@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Administração</title>
+</head>
+<body>
+<h1>Administração</h1>
+<h2>Adicionar Convênio</h2>
+<form th:action="@{/admin/convenios/add}" th:object="${convenioCreateRequest}" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" th:field="*{nome}" required>
+    <!-- Outros campos -->
+    <button type="submit">Adicionar Convênio</button>
+</form>
+<h2>Adicionar Especialidade</h2>
+<form th:action="@{/admin/especialidades/add}" th:object="${especialidadeCreateRequest}" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" th:field="*{nome}" required>
+    <!-- Outros campos -->
+    <button type="submit">Adicionar Especialidade</button>
+</form>
+<h2>Adicionar Funcionário</h2>
+<form th:action="@{/admin/funcionarios/add}" th:object="${funcionarioCreateRequest}" method="post">
+    <label for="nomeCompleto">Nome Completo:</label>
+    <input type="text" id="nomeCompleto" th:field="*{nomeCompleto}" required>
+    <!-- Outros campos -->
+    <button type="submit">Adicionar Funcionário</button>
+</form>
+<h2>Adicionar Médico</h2>
+<form th:action="@{/admin/medicos/add}" th:object="${medicoCreateRequest}" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" th:field="*{nome}" required>
+    <!-- Outros campos -->
+    <button type="submit">Adicionar Médico</button>
+</form>
+<h2>Adicionar Usuário</h2>
+<form th:action="@{/admin/usuarios/add}" th:object="${usuarioCreateRequest}" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" th:field="*{nome}" required>
+    <!-- Outros campos -->
+    <button type="submit">Adicionar Usuário</button>
+</form>
+<h2>Lista de Convênios</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <!-- Outros campos -->
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="convenio : ${convenios}">
+        <td th:text="${convenio.id}">1</td>
+        <td th:text="${convenio.nome}">Nome</td>
+        <!-- Outros campos -->
+        <td>
+            <a th:href="@{/admin/convenios/edit/{id}(id=${convenio.id})}">Editar</a>
+            <a th:href="@{/admin/convenios/delete/{id}(id=${convenio.id})}">Excluir</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!-- Tabelas similares para Especialidades, Funcionários, Médicos, Usuários -->
+</body>
+</html>
