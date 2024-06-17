@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class EspecialidadeCreateRequest {
 
-    private String Nome;
-    private String Descricao;
+    private String nome;
+    private String descricao;
 }
