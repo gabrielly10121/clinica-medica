@@ -1,10 +1,9 @@
 package br.edu.imepac.services;
 
-
 import br.edu.imepac.dtos.MedicoCreateRequest;
 import br.edu.imepac.dtos.MedicoDto;
 import br.edu.imepac.models.MedicoModel;
-import br.edu.imepac.repositories.MedicoRepository;
+import br.edu.imepac.dtos.repositories.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,19 +34,15 @@ public class MedicoService {
 
     public MedicoDto update(Long id, MedicoDto medicoDetails) {
         Optional<MedicoModel> optionalMedico = medicoRepository.findById(id);
-
         if (optionalMedico.isPresent()) {
             MedicoModel medicoModel = optionalMedico.get();
             medicoModel.setNome(medicoDetails.getNome());
             medicoModel.setCrm(medicoDetails.getCrm());
-
             MedicoModel updatedMedico = medicoRepository.save(medicoModel);
-
             MedicoDto medicoDto = new MedicoDto();
             medicoDto.setId(updatedMedico.getId());
             medicoDto.setNome(updatedMedico.getNome());
             medicoDto.setCrm(updatedMedico.getCrm());
-
             return medicoDto;
         } else {
             return null;
@@ -59,14 +54,11 @@ public class MedicoService {
         medicoModel.setNome(medicoRequest.getNome());
         medicoModel.setCrm(medicoRequest.getCrm());
         medicoModel.setSenha(medicoRequest.getSenha());
-
         MedicoModel savedMedico = medicoRepository.save(medicoModel);
-
         MedicoDto medicoDto = new MedicoDto();
         medicoDto.setId(savedMedico.getId());
         medicoDto.setNome(savedMedico.getNome());
         medicoDto.setCrm(savedMedico.getCrm());
-
         return medicoDto;
     }
 

@@ -12,9 +12,13 @@ public class ConvenioModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codigo;
-    private String nome;
-    private String tipo;
-    private String email;
+        private Long id;
+        private String nome;
+        private String codigo;
+        private String tipo;
+        private String descricao;
+        private String telefone;
+        private String email;
+        private String endereco;
 
 }

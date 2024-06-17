@@ -1,4 +1,4 @@
-package br.edu.imepac.repositories;
+package br.edu.imepac.dtos.repositories;
 
 import br.edu.imepac.models.ConvenioModel;
 import org.springframework.data.jpa.repository.JpaRepository;
