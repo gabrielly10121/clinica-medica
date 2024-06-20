@@ -3,7 +3,7 @@ package br.edu.imepac.services;
 import br.edu.imepac.dtos.EspecialidadeCreateRequest;
 import br.edu.imepac.dtos.EspecialidadeDto;
 import br.edu.imepac.models.EspecialidadeModel;
-import br.edu.imepac.dtos.repositories.EspecialidadeRepository;
+import br.edu.imepac.repositories.EspecialidadeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

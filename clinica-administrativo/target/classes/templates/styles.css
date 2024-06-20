@@ -1,0 +1,79 @@
+/* Estilo para o corpo da página */
+body {
+    background-color: #e0f7fa; /* Verde claro */
+    font-family: 'Arial', sans-serif; /* Fonte */
+    color: black; /* Cor do texto preta */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Estilo para os títulos */
+h1, h2 {
+    color: black; /* Cor preta */
+}
+
+/* Centralizar o título h1 */
+h1 {
+    text-align: center;
+}
+
+/* Estilo para os formulários */
+form {
+    margin-bottom: 20px;
+}
+
+/* Estilo para os rótulos */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: black; /* Cor preta */
+}
+
+/* Estilo para os campos de entrada */
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #004d40;
+    border-radius: 5px;
+    background-color: #e0f2f1; /* Cor de fundo das caixas de entrada */
+    color: black; /* Cor preta */
+}
+
+/* Estilo para os botões */
+button {
+    background-color: #00796b; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px; /* Botões redondos */
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 10px auto; /* Centraliza os botões */
+}
+
+button:hover {
+    background-color: #004d40; /* Verde mais escuro ao passar o mouse */
+}
+
+/* Estilo para a tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #004d40;
+    padding: 10px;
+    text-align: left;
+    color: black; /* Cor preta */
+}
+
+th {
+    background-color: #00796b;
+    color: white;
+}

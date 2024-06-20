@@ -3,7 +3,7 @@ package br.edu.imepac.services;
 import br.edu.imepac.dtos.UsuarioCreateRequest;
 import br.edu.imepac.dtos.UsuarioDto;
 import br.edu.imepac.models.UsuarioModel;
-import br.edu.imepac.dtos.repositories.UsuarioRepository;
+import br.edu.imepac.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
