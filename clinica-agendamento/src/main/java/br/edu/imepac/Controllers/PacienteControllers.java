@@ -1,7 +1,6 @@
 package br.edu.imepac.Controllers;
 
 import br.edu.imepac.Dtos.PacienteCreateRequest;
-import br.edu.imepac.Dtos.PacienteDto;
 import br.edu.imepac.Model.PacienteModel;
 import br.edu.imepac.Services.PacienteServices;
 import org.springframework.beans.factory.annotation.Autowired;

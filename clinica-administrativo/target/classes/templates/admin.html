@@ -2,28 +2,57 @@
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Administração</title>
+    <title>Clínica Médica</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Administração</h1>
+
+
+<h1>Clínica Médica</h1>
+
+<!-- convenio -->
 <h2>Adicionar Convênio</h2>
 <form th:action="@{/admin/convenios/add}" th:object="${convenioCreateRequest}" method="post">
     <label for="nome">Nome:</label>
-    <input type="text" id="nome" th:field="*{nome}" required>
-    <!-- Outros campos -->
+    <input type="text" id="name" th:field="*{nome}" required>
+    <label for="nome">Código:</label>
+    <input type="text" id="codigo" th:field="*{nome}" required>
+    <label for="nome">Tipo:</label>
+    <input type="text" id="type" th:field="*{nome}" required>
+    <label for="nome">Descrição:</label>
+    <input type="text" id="describe" th:field="*{nome}" required>
+    <label for="nome">Telefone:</label>
+    <input type="text" id="phone" th:field="*{nome}" required>
+    <label for="nome">E-mail:</label>
+    <input type="text" id="email" th:field="*{nome}" required>
+    <br> <br>
+    <label for="nome">Endereço:</label>
+    <input type="text" id="endereco" th:field="*{nome}" required>
     <button type="submit">Adicionar Convênio</button>
 </form>
+
+<!-- especialidade -->
+
 <h2>Adicionar Especialidade</h2>
 <form th:action="@{/admin/especialidades/add}" th:object="${especialidadeCreateRequest}" method="post">
     <label for="nome">Nome:</label>
-    <input type="text" id="nome" th:field="*{nome}" required>
-    <!-- Outros campos -->
+    <input type="text" id="namee" th:field="*{nome}" required>
+    <label for="nome">Descrição:</label>
+    <input type="text" id="describes" th:field="*{nome}" required>
     <button type="submit">Adicionar Especialidade</button>
 </form>
+
+<!-- Funcionario -->
 <h2>Adicionar Funcionário</h2>
 <form th:action="@{/admin/funcionarios/add}" th:object="${funcionarioCreateRequest}" method="post">
     <label for="nomeCompleto">Nome Completo:</label>
     <input type="text" id="nomeCompleto" th:field="*{nomeCompleto}" required>
+    <label for="nomeCompleto">RG:</label>
+    <input type="text" id="rg" th:field="*{nomeCompleto}" required>
+    <label for="nomeCompleto">Orgão Emissor:</label>
+    <input type="text" id="orgaoEmissor" th:field="*{nomeCompleto}" required>
+    <label for="nomeCompleto">Orgão Emissor:</label>
+    <input type="text" id="orgaoEmissor" th:field="*{nomeCompleto}" required>
     <!-- Outros campos -->
     <button type="submit">Adicionar Funcionário</button>
 </form>
@@ -63,6 +92,6 @@
     </tr>
     </tbody>
 </table>
-<!-- Tabelas similares para Especialidades, Funcionários, Médicos, Usuários -->
+
 </body>
 </html>
