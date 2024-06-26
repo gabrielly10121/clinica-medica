@@ -10,6 +10,7 @@
     <module>clinica-administrativo</module>
     <module>clinica-atendimento</module>
     <module>clinica-agendamento</module>
+      <module>clinica-interno</module>
   </modules>
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
