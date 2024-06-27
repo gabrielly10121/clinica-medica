@@ -13,4 +13,5 @@ public class ConvenioDto {
     private String telefone;
     private String email;
     private String endereco;
+
 }

@@ -3,7 +3,7 @@ package br.edu.imepac.services;
 import br.edu.imepac.dtos.UsuarioCreateRequest;
 import br.edu.imepac.dtos.UsuarioDto;
 import br.edu.imepac.models.UsuarioModel;
-import br.edu.imepac.dtos.repositories.UsuarioRepository;
+import br.edu.imepac.repositories.UsuarioRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

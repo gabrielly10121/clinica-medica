@@ -3,7 +3,7 @@ package br.edu.imepac.services;
 import br.edu.imepac.dtos.EspecialidadeCreateRequest;
 import br.edu.imepac.dtos.EspecialidadeDto;
 import br.edu.imepac.models.EspecialidadeModel;
-import br.edu.imepac.dtos.repositories.EspecialidadeRepository;
+import br.edu.imepac.repositories.EspecialidadeRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

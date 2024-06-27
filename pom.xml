@@ -10,6 +10,7 @@
     <module>clinica-administrativo</module>
     <module>clinica-atendimento</module>
     <module>clinica-agendamento</module>
+      <module>clinica-interno</module>
   </modules>
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
@@ -46,8 +47,26 @@
         <version>5.8.1</version>
         <scope>test</scope>
       </dependency>
-
-
+      <dependency>
+        <groupId>org.flywaydb</groupId>
+        <artifactId>flyway-core</artifactId>
+        <version>9.16.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.flywaydb</groupId>
+        <artifactId>flyway-mysql</artifactId>
+        <version>8.4.4</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.32</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.7.32</version>
+      </dependency>
     </dependencies>
 </dependencyManagement>
 </project>

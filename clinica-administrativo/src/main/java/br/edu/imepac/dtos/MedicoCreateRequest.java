@@ -8,3 +8,5 @@ public class MedicoCreateRequest {
     private String crm;
     private String senha;
 }
+
+

@@ -3,7 +3,7 @@ package br.edu.imepac.services;
 import br.edu.imepac.dtos.FuncionarioCreateRequest;
 import br.edu.imepac.dtos.FuncionarioDto;
 import br.edu.imepac.models.FuncionarioModel;
-import br.edu.imepac.dtos.repositories.FuncionarioRepository;
+import br.edu.imepac.repositories.FuncionarioRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -3,7 +3,7 @@ package br.edu.imepac.services;
 import br.edu.imepac.dtos.ConvenioCreateRequest;
 import br.edu.imepac.dtos.ConvenioDto;
 import br.edu.imepac.models.ConvenioModel;
-import br.edu.imepac.dtos.repositories.ConvenioRepository;
+import br.edu.imepac.repositories.ConvenioRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

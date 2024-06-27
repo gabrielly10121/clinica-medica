@@ -3,7 +3,7 @@ package br.edu.imepac.services;
 import br.edu.imepac.dtos.FuncionarioCreateRequest;
 import br.edu.imepac.dtos.FuncionarioDto;
 import br.edu.imepac.models.FuncionarioModel;
-import br.edu.imepac.dtos.repositories.FuncionarioRepository;
+import br.edu.imepac.repositories.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
