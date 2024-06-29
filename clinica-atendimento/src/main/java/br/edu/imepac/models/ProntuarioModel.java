@@ -10,7 +10,8 @@ public class ProntuarioModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    private Long id;
+    
     private int registroAgenda;
     private int codigoPaciente;
     private String historico;

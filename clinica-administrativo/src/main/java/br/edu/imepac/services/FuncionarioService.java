@@ -4,6 +4,8 @@ import br.edu.imepac.dtos.FuncionarioCreateRequest;
 import br.edu.imepac.dtos.FuncionarioDto;
 import br.edu.imepac.models.FuncionarioModel;
 import br.edu.imepac.repositories.FuncionarioRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +15,14 @@ import java.util.stream.Collectors;
 
 @Service
 public class FuncionarioService {
+
+    private static final Logger logger = LoggerFactory.getLogger(FuncionarioService.class);
+
     @Autowired
     private FuncionarioRepository funcionarioRepository;
 
     public FuncionarioDto createFuncionario(FuncionarioCreateRequest request) {
+        logger.info("Creating new funcionario with nomeCompleto: {}", request.getNomeCompleto());
         FuncionarioModel funcionario = new FuncionarioModel();
         funcionario.setNomeCompleto(request.getNomeCompleto());
         funcionario.setRg(request.getRg());
@@ -30,9 +36,8 @@ public class FuncionarioService {
         funcionario.setTelefone(request.getTelefone());
         funcionario.setSexo(request.getSexo());
         funcionario.setDataNascimento(request.getDataNascimento());
-
         FuncionarioModel savedFuncionario = funcionarioRepository.save(funcionario);
-
+        logger.info("Funcionario created with id: {}", savedFuncionario.getId());
         FuncionarioDto funcionarioDto = new FuncionarioDto();
         funcionarioDto.setId(savedFuncionario.getId());
         funcionarioDto.setNomeCompleto(savedFuncionario.getNomeCompleto());
@@ -47,11 +52,11 @@ public class FuncionarioService {
         funcionarioDto.setTelefone(savedFuncionario.getTelefone());
         funcionarioDto.setSexo(savedFuncionario.getSexo());
         funcionarioDto.setDataNascimento(savedFuncionario.getDataNascimento());
-
         return funcionarioDto;
     }
 
     public List<FuncionarioDto> getAllFuncionarios() {
+        logger.info("Fetching all funcionarios");
         List<FuncionarioModel> funcionarios = funcionarioRepository.findAll();
         return funcionarios.stream().map(funcionario -> {
             FuncionarioDto dto = new FuncionarioDto();
@@ -73,10 +78,12 @@ public class FuncionarioService {
     }
 
     public void delete(Long id) {
+        logger.info("Deleting funcionario with id: {}", id);
         funcionarioRepository.deleteById(id);
     }
 
     public FuncionarioDto update(Long id, FuncionarioDto funcionarioDetails) {
+        logger.info("Updating funcionario with id: {}", id);
         Optional<FuncionarioModel> optionalFuncionario = funcionarioRepository.findById(id);
         if (optionalFuncionario.isPresent()) {
             FuncionarioModel funcionario = optionalFuncionario.get();
@@ -92,9 +99,8 @@ public class FuncionarioService {
             funcionario.setTelefone(funcionarioDetails.getTelefone());
             funcionario.setSexo(funcionarioDetails.getSexo());
             funcionario.setDataNascimento(funcionarioDetails.getDataNascimento());
-
             FuncionarioModel updatedFuncionario = funcionarioRepository.save(funcionario);
-
+            logger.info("Funcionario updated with id: {}", updatedFuncionario.getId());
             FuncionarioDto funcionarioDto = new FuncionarioDto();
             funcionarioDto.setId(updatedFuncionario.getId());
             funcionarioDto.setNomeCompleto(updatedFuncionario.getNomeCompleto());
@@ -109,14 +115,15 @@ public class FuncionarioService {
             funcionarioDto.setTelefone(updatedFuncionario.getTelefone());
             funcionarioDto.setSexo(updatedFuncionario.getSexo());
             funcionarioDto.setDataNascimento(updatedFuncionario.getDataNascimento());
-
             return funcionarioDto;
         } else {
+            logger.error("Funcionario with id: {} not found", id);
             return null;
         }
     }
 
     public FuncionarioDto findById(Long id) {
+        logger.info("Fetching funcionario with id: {}", id);
         Optional<FuncionarioModel> optionalFuncionario = funcionarioRepository.findById(id);
         if (optionalFuncionario.isPresent()) {
             FuncionarioModel funcionario = optionalFuncionario.get();
@@ -136,11 +143,13 @@ public class FuncionarioService {
             funcionarioDto.setDataNascimento(funcionario.getDataNascimento());
             return funcionarioDto;
         } else {
+            logger.error("Funcionario with id: {} not found", id);
             return null;
         }
     }
 
     public long countFuncionarios() {
+        logger.info("Counting all funcionarios");
         return funcionarioRepository.count();
     }
 }

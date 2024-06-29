@@ -38,13 +38,13 @@ public class ProntuarioService {
         return prontuarioRepository.findAll().stream().map(this::toDto).collect(Collectors.toList());
     }
 
-    public ProntuarioDto getProntuarioById(int id) {
+    public ProntuarioDto getProntuarioById(Long id) {
         logger.info("Fetching prontuario with id: {}", id);
         Optional<ProntuarioModel> prontuario = prontuarioRepository.findById(id);
         return prontuario.map(this::toDto).orElse(null);
     }
 
-    public ProntuarioDto updateProntuario(int id, ProntuarioCreateRequest request) {
+    public ProntuarioDto updateProntuario(Long id, ProntuarioCreateRequest request) {
         logger.info("Updating prontuario with id: {}", id);
         ProntuarioModel prontuario = prontuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Prontuario not found"));
@@ -57,7 +57,7 @@ public class ProntuarioService {
         return toDto(prontuario);
     }
 
-    public void deleteProntuario(int id) {
+    public void deleteProntuario(Long id) {
         logger.info("Deleting prontuario with id: {}", id);
         prontuarioRepository.deleteById(id);
     }

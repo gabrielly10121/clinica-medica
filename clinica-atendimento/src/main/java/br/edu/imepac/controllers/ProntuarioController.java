@@ -29,7 +29,7 @@ public class ProntuarioController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProntuarioDto> getProntuarioById(@PathVariable int id) {
+    public ResponseEntity<ProntuarioDto> getProntuarioById(@PathVariable Long id) {
         ProntuarioDto prontuario = prontuarioService.getProntuarioById(id);
         if (prontuario != null) {
             return ResponseEntity.ok(prontuario);
@@ -39,13 +39,13 @@ public class ProntuarioController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ProntuarioDto> updateProntuario(@PathVariable int id, @RequestBody ProntuarioCreateRequest request) {
+    public ResponseEntity<ProntuarioDto> updateProntuario(@PathVariable Long id, @RequestBody ProntuarioCreateRequest request) {
         ProntuarioDto prontuario = prontuarioService.updateProntuario(id, request);
         return ResponseEntity.ok(prontuario);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProntuario(@PathVariable int id) {
+    public ResponseEntity<Void> deleteProntuario(@PathVariable Long id) {
         prontuarioService.deleteProntuario(id);
         return ResponseEntity.noContent().build();
     }
