@@ -7,6 +7,11 @@
           <value>
             <ProjectStateData>
               <option name="conversationId" value="01J1TXDMM1M3509QPJBS5P2QCE" />
+              <option name="indexedFiles">
+                <map>
+                  <entry key="$PROJECT_DIR$/clinica-administrativo/src/main/java/br/edu/imepac/ClinicaAdministrativo.java" value="0" />
+                </map>
+              </option>
               <option name="projectId" value="01J1TXDMGNT05VZGKAWC4JHYWX" />
             </ProjectStateData>
           </value>
