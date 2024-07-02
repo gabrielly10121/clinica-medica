@@ -10,16 +10,20 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/pacientes")
+//@Api(value = "Pacientes", tags = "Pacientes")
 public class PacienteControllers {
+
     @Autowired
     private PacienteServices pacienteService;
 
     @GetMapping
+    ////@ApiOperation(value = "Lista todos os pacientes")
     public List<PacienteModel> getAllPacientes() {
         return pacienteService.getAllPacientes();
     }
 
     @PostMapping
+    ////@ApiOperation(value = "Cria um novo paciente")
     public PacienteModel createPaciente(@RequestBody PacienteCreateRequest pacienteRequest) {
         PacienteModel paciente = new PacienteModel();
         paciente.setNome(pacienteRequest.getNome());
@@ -31,11 +35,13 @@ public class PacienteControllers {
     }
 
     @GetMapping("/{id}")
+    ////@ApiOperation(value = "Busca um paciente pelo ID")
     public PacienteModel getPacienteById(@PathVariable Long id) {
         return pacienteService.getPacienteById(id);
     }
 
     @DeleteMapping("/{id}")
+    ////@ApiOperation(value = "Deleta um paciente pelo ID")
     public void deletePaciente(@PathVariable Long id) {
         pacienteService.deletePaciente(id);
     }

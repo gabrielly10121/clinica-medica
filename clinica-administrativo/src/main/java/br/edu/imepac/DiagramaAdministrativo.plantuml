@@ -1,0 +1,273 @@
+@startuml
+package clinica.administrativa.models {
+    class ConvenioModel {
+        Long id
+        String nome
+        String codigo
+        String tipo
+        String descricao
+        String telefone
+        String email
+        String endereco
+    }
+    class EspecialidadeModel {
+        Long id
+        String nome
+        String descricao
+    }
+    class FuncionarioModel {
+        Long id
+        String nomeCompleto
+        String rg
+        String orgaoEmissor
+        String cpf
+        String endereco
+        String numero
+        String bairro
+        String cidade
+        String estado
+        String telefone
+        String sexo
+        String dataNascimento
+    }
+    class MedicoModel {
+        Long id
+        String nome
+        String crm
+        String senha
+    }
+    class UsuarioModel {
+        Long id
+        String nome
+        String email
+        String senha
+        String telefone
+        String endereco
+    }
+}
+
+package clinica.administrativa.dtos {
+    class ConvenioDto {
+        Long id
+        String nome
+        String codigo
+        String tipo
+        String descricao
+        String telefone
+        String email
+        String endereco
+    }
+    class ConvenioCreateRequest {
+        String nome
+        String codigo
+        String tipo
+        String descricao
+        String telefone
+        String email
+        String endereco
+    }
+    class EspecialidadeCreateRequest {
+        String nome
+        String descricao
+    }
+    class EspecialidadeDto {
+        Long id
+        String nome
+        String descricao
+    }
+    class FuncionarioCreateRequest {
+        String nomeCompleto
+        String rg
+        String orgaoEmissor
+        String cpf
+        String endereco
+        String numero
+        String bairro
+        String cidade
+        String estado
+        String telefone
+        String sexo
+        String dataNascimento
+    }
+    class FuncionarioDto {
+        Long id
+        String nomeCompleto
+        String rg
+        String orgaoEmissor
+        String cpf
+        String endereco
+        String numero
+        String bairro
+        String cidade
+        String estado
+        String telefone
+        String sexo
+        String dataNascimento
+    }
+    class MedicoCreateRequest {
+        String nome
+        String crm
+        String senha
+    }
+    class MedicoDto {
+        Long id
+        String nome
+        String crm
+    }
+    class UsuarioCreateRequest {
+        String nome
+        String email
+        String senha
+        String telefone
+        String endereco
+    }
+    class UsuarioDto {
+        Long id
+        String nome
+        String email
+        String telefone
+        String endereco
+    }
+}
+
+package clinica.administrativa.repositories {
+    class ConvenioRepository {
+        +save(ConvenioModel convenio)
+        +findById(Long id)
+        +findAll()
+        +deleteById(Long id)
+    }
+    class EspecialidadeRepository {
+        +save(EspecialidadeModel especialidade)
+        +findById(Long id)
+        +findAll()
+        +deleteById(Long id)
+    }
+    class FuncionarioRepository {
+        +save(FuncionarioModel funcionario)
+        +findById(Long id)
+        +findAll()
+        +deleteById(Long id)
+    }
+    class MedicoRepository {
+        +save(MedicoModel medico)
+        +findById(Long id)
+        +findAll()
+        +deleteById(Long id)
+    }
+    class UsuarioRepository {
+        +save(UsuarioModel usuario)
+        +findById(Long id)
+        +findAll()
+        +deleteById(Long id)
+    }
+}
+
+package clinica.administrativa.services {
+    class ConvenioService {
+        +createConvenio(ConvenioCreateRequest request)
+        +getAllConvenios()
+        +delete(Long id)
+        +update(Long id, ConvenioDto convenioDetails)
+        +findById(Long id)
+    }
+    class EspecialidadeService {
+        +createEspecialidade(EspecialidadeCreateRequest request)
+        +getAllEspecialidades()
+        +delete(Long id)
+        +update(Long id, EspecialidadeDto especialidadeDetails)
+        +findById(Long id)
+    }
+    class FuncionarioService {
+        +createFuncionario(FuncionarioCreateRequest request)
+        +getAllFuncionarios()
+        +delete(Long id)
+        +update(Long id, FuncionarioDto funcionarioDetails)
+        +findById(Long id)
+        +countFuncionarios()
+    }
+    class MedicoService {
+        +save(MedicoCreateRequest medicoRequest)
+        +findAll()
+        +delete(Long id)
+        +update(Long id, MedicoDto medicoDetails)
+        +findById(Long id)
+    }
+    class UsuarioService {
+        +createUsuario(UsuarioCreateRequest request)
+        +getAllUsuarios()
+        +delete(Long id)
+        +update(Long id, UsuarioDto usuarioDetails)
+        +findById(Long id)
+    }
+}
+
+package clinica.administrativa.controllers {
+    class ConvenioController {
+        +createConvenio(ConvenioCreateRequest request)
+        +getAllConvenios()
+        +getConvenioById(Long id)
+        +updateConvenio(Long id, ConvenioDto convenioDetails)
+        +deleteConvenio(Long id)
+    }
+    class EspecialidadeController {
+        +createEspecialidade(EspecialidadeCreateRequest request)
+        +getAllEspecialidades()
+        +getEspecialidadeById(Long id)
+        +updateEspecialidade(Long id, EspecialidadeDto especialidadeDetails)
+        +deleteEspecialidade(Long id)
+    }
+    class FuncionarioController {
+        +createFuncionario(FuncionarioCreateRequest request)
+        +getAllFuncionarios()
+        +getFuncionarioById(Long id)
+        +updateFuncionario(Long id, FuncionarioDto funcionarioDetails)
+        +deleteFuncionario(Long id)
+        +countFuncionarios()
+    }
+    class MedicoController {
+        +saveDoctor(MedicoCreateRequest medicoCreateRequest)
+        +listAllDoctors()
+        +getDoctorById(Long id)
+        +updateDoctor(Long id, MedicoDto medicoDetails)
+        +deleteDoctor(Long id)
+    }
+    class UsuarioController {
+        +createUsuario(UsuarioCreateRequest request)
+        +getAllUsuarios()
+        +getUsuarioById(Long id)
+        +updateUsuario(Long id, UsuarioDto usuarioDetails)
+        +deleteUsuario(Long id)
+    }
+}
+
+ConvenioService --> ConvenioRepository : uses
+EspecialidadeService --> EspecialidadeRepository : uses
+FuncionarioService --> FuncionarioRepository : uses
+MedicoService --> MedicoRepository : uses
+UsuarioService --> UsuarioRepository : uses
+
+ConvenioController --> ConvenioService : uses
+EspecialidadeController --> EspecialidadeService : uses
+FuncionarioController --> FuncionarioService : uses
+MedicoController --> MedicoService : uses
+UsuarioController --> UsuarioService : uses
+
+ConvenioService --> ConvenioModel : manages
+EspecialidadeService --> EspecialidadeModel : manages
+FuncionarioService --> FuncionarioModel : manages
+MedicoService --> MedicoModel : manages
+UsuarioService --> UsuarioModel : manages
+
+ConvenioService --> ConvenioDto : converts to/from
+EspecialidadeService --> EspecialidadeDto : converts to/from
+FuncionarioService --> FuncionarioDto : converts to/from
+MedicoService --> MedicoDto : converts to/from
+UsuarioService --> UsuarioDto : converts to/from
+
+ConvenioService --> ConvenioCreateRequest : converts from
+EspecialidadeService --> EspecialidadeCreateRequest : converts from
+FuncionarioService --> FuncionarioCreateRequest : converts from
+MedicoService --> MedicoCreateRequest : converts from
+UsuarioService --> UsuarioCreateRequest : converts from
+@enduml

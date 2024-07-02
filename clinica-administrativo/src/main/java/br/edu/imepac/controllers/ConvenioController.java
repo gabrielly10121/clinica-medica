@@ -11,23 +11,27 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/convenios")
+//@Api(value = "Convenios", tags = "Convenios")
 public class ConvenioController {
     @Autowired
     private ConvenioService convenioService;
 
     @PostMapping
+    ////@ApiOperation(value = "Cria um novo convenio")
     public ResponseEntity<ConvenioDto> createConvenio(@RequestBody ConvenioCreateRequest request) {
         ConvenioDto convenioDto = convenioService.createConvenio(request);
         return ResponseEntity.ok(convenioDto);
     }
 
     @GetMapping
+    ////@ApiOperation(value = "Lista todos os convenios")
     public ResponseEntity<List<ConvenioDto>> getAllConvenios() {
         List<ConvenioDto> convenios = convenioService.getAllConvenios();
         return ResponseEntity.ok(convenios);
     }
 
     @GetMapping("/{id}")
+    ////@ApiOperation(value = "Busca um convenio pelo ID")
     public ResponseEntity<ConvenioDto> getConvenioById(@PathVariable Long id) {
         ConvenioDto convenioDto = convenioService.findById(id);
         if (convenioDto != null) {
@@ -38,6 +42,7 @@ public class ConvenioController {
     }
 
     @PutMapping("/{id}")
+    ////@ApiOperation(value = "Atualiza um convenio pelo ID")
     public ResponseEntity<ConvenioDto> updateConvenio(@PathVariable Long id, @RequestBody ConvenioDto convenioDetails) {
         ConvenioDto updatedConvenio = convenioService.update(id, convenioDetails);
         if (updatedConvenio != null) {
@@ -48,6 +53,7 @@ public class ConvenioController {
     }
 
     @DeleteMapping("/{id}")
+    ////@ApiOperation(value = "Deleta um convenio pelo ID")
     public ResponseEntity<Void> deleteConvenio(@PathVariable Long id) {
         convenioService.delete(id);
         return ResponseEntity.noContent().build();

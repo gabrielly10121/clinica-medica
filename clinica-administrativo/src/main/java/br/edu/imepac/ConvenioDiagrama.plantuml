@@ -1,0 +1,62 @@
+@startuml
+class ConvenioModel {
+    Long id
+    String nome
+    String codigo
+    String tipo
+    String descricao
+    String telefone
+    String email
+    String endereco
+}
+
+class ConvenioDto {
+    Long id
+    String nome
+    String codigo
+    String tipo
+    String descricao
+    String telefone
+    String email
+    String endereco
+}
+
+class ConvenioCreateRequest {
+    String nome
+    String codigo
+    String tipo
+    String descricao
+    String telefone
+    String email
+    String endereco
+}
+
+class ConvenioRepository {
+    +save(ConvenioModel convenio)
+    +findById(Long id)
+    +findAll()
+    +deleteById(Long id)
+}
+
+class ConvenioService {
+    +createConvenio(ConvenioCreateRequest request)
+    +getAllConvenios()
+    +delete(Long id)
+    +update(Long id, ConvenioDto convenioDetails)
+    +findById(Long id)
+}
+
+class ConvenioController {
+    +createConvenio(ConvenioCreateRequest request)
+    +getAllConvenios()
+    +getConvenioById(Long id)
+    +updateConvenio(Long id, ConvenioDto convenioDetails)
+    +deleteConvenio(Long id)
+}
+
+ConvenioService --> ConvenioRepository : uses
+ConvenioController --> ConvenioService : uses
+ConvenioService --> ConvenioModel : manages
+ConvenioService --> ConvenioDto : converts to/from
+ConvenioService --> ConvenioCreateRequest : converts from
+@enduml

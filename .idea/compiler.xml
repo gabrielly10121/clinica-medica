@@ -20,4 +20,12 @@
       </profile>
     </annotationProcessing>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="clinica-administrativo" options="-parameters" />
+      <module name="clinica-agendamento" options="-parameters" />
+      <module name="clinica-atendimento" options="-parameters" />
+      <module name="clinica-interno" options="-parameters" />
+    </option>
+  </component>
 </project>

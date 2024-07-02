@@ -1,0 +1,69 @@
+@startuml
+actor User
+
+User -> FuncionarioController: createFuncionario(request)
+activate FuncionarioController
+FuncionarioController -> FuncionarioService: createFuncionario(request)
+activate FuncionarioService
+FuncionarioService -> FuncionarioRepository: save(funcionario)
+activate FuncionarioRepository
+FuncionarioRepository --> FuncionarioService: savedFuncionario
+deactivate FuncionarioRepository
+FuncionarioService --> FuncionarioController: funcionarioDto
+deactivate FuncionarioService
+FuncionarioController --> User: ResponseEntity.ok(funcionarioDto)
+deactivate FuncionarioController
+
+User -> UsuarioController: createUsuario(request)
+activate UsuarioController
+UsuarioController -> UsuarioService: createUsuario(request)
+activate UsuarioService
+UsuarioService -> UsuarioRepository: save(usuario)
+activate UsuarioRepository
+UsuarioRepository --> UsuarioService: savedUsuario
+deactivate UsuarioRepository
+UsuarioService --> UsuarioController: usuarioDto
+deactivate UsuarioService
+UsuarioController --> User: ResponseEntity.ok(usuarioDto)
+deactivate UsuarioController
+
+User -> EspecialidadeController: createEspecialidade(request)
+activate EspecialidadeController
+EspecialidadeController -> EspecialidadeService: createEspecialidade(request)
+activate EspecialidadeService
+EspecialidadeService -> EspecialidadeRepository: save(especialidade)
+activate EspecialidadeRepository
+EspecialidadeRepository --> EspecialidadeService: savedEspecialidade
+deactivate EspecialidadeRepository
+EspecialidadeService --> EspecialidadeController: especialidadeDto
+deactivate EspecialidadeService
+EspecialidadeController --> User: ResponseEntity.ok(especialidadeDto)
+deactivate EspecialidadeController
+
+User -> MedicoController: saveDoctor(request)
+activate MedicoController
+MedicoController -> MedicoService: save(medicoRequest)
+activate MedicoService
+MedicoService -> MedicoRepository: save(medico)
+activate MedicoRepository
+MedicoRepository --> MedicoService: savedMedico
+deactivate MedicoRepository
+MedicoService --> MedicoController: medicoDto
+deactivate MedicoService
+MedicoController --> User: ResponseEntity.ok(medicoDto)
+deactivate MedicoController
+
+User -> ConvenioController: createConvenio(request)
+activate ConvenioController
+ConvenioController -> ConvenioService: createConvenio(request)
+activate ConvenioService
+ConvenioService -> ConvenioRepository: save(convenio)
+activate ConvenioRepository
+ConvenioRepository --> ConvenioService: savedConvenio
+deactivate ConvenioRepository
+ConvenioService --> ConvenioController: convenioDto
+deactivate ConvenioService
+ConvenioController --> User: ResponseEntity.ok(convenioDto)
+deactivate ConvenioController
+
+@enduml

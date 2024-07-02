@@ -1,0 +1,19 @@
+@startuml
+actor User
+User -> ConvenioController: createConvenio(request)
+activate ConvenioController
+
+ConvenioController -> ConvenioService: createConvenio(request)
+activate ConvenioService
+
+ConvenioService -> ConvenioRepository: save(convenio)
+activate ConvenioRepository
+ConvenioRepository --> ConvenioService: savedConvenio
+deactivate ConvenioRepository
+
+ConvenioService --> ConvenioController: convenioDto
+deactivate ConvenioService
+
+ConvenioController --> User: ResponseEntity.ok(convenioDto)
+deactivate ConvenioController
+@enduml
