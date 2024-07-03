@@ -1,4 +1,4 @@
-CREATE TABLE funcionario (
+CREATE TABLE funcionario_model (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nome_completo VARCHAR(255) NOT NULL,
     rg VARCHAR(255),

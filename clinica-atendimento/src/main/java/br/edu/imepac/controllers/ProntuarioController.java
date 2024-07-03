@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/prontuarios")
 //@Api(value = "Prontuarios", tags = "Prontuarios")
-public class ProntuarioController {
+public class  ProntuarioController {
 
     @Autowired
     private ProntuarioService prontuarioService;

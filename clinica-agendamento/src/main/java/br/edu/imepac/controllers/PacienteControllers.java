@@ -1,4 +1,4 @@
-package br.edu.imepac.Controllers;
+package br.edu.imepac.controllers;
 
 import br.edu.imepac.Dtos.PacienteCreateRequest;
 import br.edu.imepac.Model.PacienteModel;
