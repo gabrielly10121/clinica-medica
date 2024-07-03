@@ -9,6 +9,10 @@ import lombok.Data;
 @Data
 public class MedicoModel {
 
+    @ManyToOne
+    @JoinColumn(name = "especialidade_id", nullable = false)
+    private EspecialidadeModel especialidade;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

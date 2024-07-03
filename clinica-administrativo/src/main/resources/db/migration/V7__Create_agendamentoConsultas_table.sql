@@ -1,4 +1,4 @@
-CREATE TABLE agendamento_consultas_model(
+CREATE TABLE clinica_medica.agendamento_consultas(
     registro INT AUTO_INCREMENT PRIMARY KEY,
     codigo_paciente INT NOT NULL,
     codigo_medico INT NOT NULL,

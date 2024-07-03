@@ -1,21 +1,30 @@
 package br.edu.imepac.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
+import br.edu.imepac.models.MedicoModel;
+import jakarta.persistence.*;
 import lombok.Data;
-@Data
+
 @Entity
+@Table(name = "agendamento_consultas")
+@Data
 public class AgendamentoConsultasModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nomePaciente;
+
+    @ManyToOne
+    @JoinColumn(name = "paciente_id", nullable = false)
+    private PacienteModel paciente;
+
+    @ManyToOne
+    @JoinColumn(name = "medico_id", nullable = false)
+    private MedicoModel medico;
+
+
     private String dataConsulta;
     private String horaConsulta;
     private String consultaCancelada;
     private String motivoCancelamento;
     private String retornoConsulta;
-
 }
