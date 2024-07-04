@@ -12,4 +12,9 @@ public class AgendamentoConsultasDto {
     private String motivoCancelamento;
     private String retornoConsulta;
 
+    public void setCodigoPaciente(int i) {
+    }
+
+    public void setCodigoMedico(int i) {
+    }
 }

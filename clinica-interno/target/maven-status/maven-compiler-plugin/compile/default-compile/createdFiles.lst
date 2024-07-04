@@ -1,0 +1,7 @@
+br\edu\imepac\MedicoModels.class
+br\edu\imepac\EspecialidadeModels.class
+br\edu\imepac\FuncionarioModels.class
+br\edu\imepac\ConvenioModels.class
+br\edu\imepac\UsuarioModels.class
+br\edu\imepac\AgendamentoConsultaModels.class
+br\edu\imepac\PacienteModels.class

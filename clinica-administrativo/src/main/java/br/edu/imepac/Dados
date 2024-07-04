@@ -1,0 +1,359 @@
+--Convenio
+
+ {
+    "id": 1,
+    "nome": "Unimed",
+    "codigo": "001",
+    "tipo": "Saúde",
+    "descricao": "Plano de saúde Unimed",
+    "telefone": "11987654321",
+    "email": "contato@unimed.com",
+    "endereco": "Rua das Flores, 123, São Paulo, SP"
+  }
+
+  {
+      "id": 2,
+      "nome": "Amil",
+      "codigo": "002",
+      "tipo": "Saúde",
+      "descricao": "Plano de saúde Amil",
+      "telefone": "11987654322",
+      "email": "contato@amil.com",
+      "endereco": "Avenida Paulista, 456, São Paulo, SP"
+    }
+
+    {
+        "id": 3,
+        "nome": "Bradesco Saúde",
+        "codigo": "003",
+        "tipo": "Saúde",
+        "descricao": "Plano de saúde Bradesco",
+        "telefone": "11987654323",
+        "email": "contato@bradescosaude.com",
+        "endereco": "Rua Augusta, 789, São Paulo, SP"
+      }
+
+      {
+          "id": 4,
+          "nome": "SulAmérica",
+          "codigo": "004",
+          "tipo": "Saúde",
+          "descricao": "Plano de saúde SulAmérica",
+          "telefone": "11987654324",
+          "email": "contato@sulamerica.com",
+          "endereco": "Avenida Brasil, 101, Rio de Janeiro, RJ"
+        }
+
+        {
+            "id": 5,
+            "nome": "Porto Seguro Saúde",
+            "codigo": "005",
+            "tipo": "Saúde",
+            "descricao": "Plano de saúde Porto Seguro",
+            "telefone": "11987654325",
+            "email": "contato@portoseguro.com",
+            "endereco": "Rua da Consolação, 202, São Paulo, SP"
+          }
+
+ --Especialidades
+
+    {
+        "id": 1,
+        "nome": "Cardiologia",
+        "descricao": "Especialidade médica que cuida do coração"
+      }
+
+      {
+          "id": 2,
+          "nome": "Dermatologia",
+          "descricao": "Especialidade médica que cuida da pele"
+        }
+
+        {
+            "id": 3,
+            "nome": "Neurologia",
+            "descricao": "Especialidade médica que cuida do sistema nervoso"
+          }
+
+          {
+              "id": 4,
+              "nome": "Pediatria",
+              "descricao": "Especialidade médica que cuida de crianças"
+            }
+
+            {
+                "id": 5,
+                "nome": "Ortopedia",
+                "descricao": "Especialidade médica que cuida dos ossos"
+              }
+
+   -- Funcionario
+
+   [
+     {
+       "id": 1,
+       "nomeCompleto": "João Silva",
+       "rg": "12345678",
+       "orgaoEmissor": "SSP",
+       "cpf": "123.456.789-00",
+       "endereco": "Rua A, 123",
+       "numero": "123",
+       "bairro": "Centro",
+       "cidade": "São Paulo",
+       "estado": "SP",
+       "telefone": "11987654321",
+       "sexo": "M",
+       "dataNascimento": "1980-01-01"
+     },
+     {
+       "id": 2,
+       "nomeCompleto": "Maria Oliveira",
+       "rg": "87654321",
+       "orgaoEmissor": "SSP",
+       "cpf": "987.654.321-00",
+       "endereco": "Rua B, 456",
+       "numero": "456",
+       "bairro": "Jardins",
+       "cidade": "São Paulo",
+       "estado": "SP",
+       "telefone": "11987654322",
+       "sexo": "F",
+       "dataNascimento": "1985-02-02"
+     },
+     {
+       "id": 3,
+       "nomeCompleto": "Carlos Pereira",
+       "rg": "11223344",
+       "orgaoEmissor": "SSP",
+       "cpf": "111.222.333-44",
+       "endereco": "Rua C, 789",
+       "numero": "789",
+       "bairro": "Moema",
+       "cidade": "São Paulo",
+       "estado": "SP",
+       "telefone": "11987654323",
+       "sexo": "M",
+       "dataNascimento": "1990-03-03"
+     },
+     {
+       "id": 4,
+       "nomeCompleto": "Ana Costa",
+       "rg": "44332211",
+       "orgaoEmissor": "SSP",
+       "cpf": "444.333.222-11",
+       "endereco": "Rua D, 101",
+       "numero": "101",
+       "bairro": "Pinheiros",
+       "cidade": "São Paulo",
+       "estado": "SP",
+       "telefone": "11987654324",
+       "sexo": "F",
+       "dataNascimento": "1995-04-04"
+     },
+     {
+       "id": 5,
+       "nomeCompleto": "Pedro Santos",
+       "rg": "55667788",
+       "orgaoEmissor": "SSP",
+       "cpf": "555.666.777-88",
+       "endereco": "Rua E, 202",
+       "numero": "202",
+       "bairro": "Vila Mariana",
+       "cidade": "São Paulo",
+       "estado": "SP",
+       "telefone": "11987654325",
+       "sexo": "M",
+       "dataNascimento": "2000-05-05"
+     }
+   ]
+
+   ---Medico
+   [
+     {
+       "id": 1,
+       "nome": "Dr. José Almeida",
+       "crm": "CRM001",
+       "senha": "senhaA",
+       "especialidade": {
+         "id": 1,
+         "nome": "Cardiologia",
+         "descricao": "Especialidade médica que cuida do coração"
+       }
+     },
+     {
+       "id": 2,
+       "nome": "Dra. Fernanda Souza",
+       "crm": "CRM002",
+       "senha": "senhaB",
+       "especialidade": {
+         "id": 2,
+         "nome": "Dermatologia",
+         "descricao": "Especialidade médica que cuida da pele"
+       }
+     },
+     {
+       "id": 3,
+       "nome": "Dr. Ricardo Lima",
+       "crm": "CRM003",
+       "senha": "senhaC",
+       "especialidade": {
+         "id": 3,
+         "nome": "Neurologia",
+         "descricao": "Especialidade médica que cuida do sistema nervoso"
+       }
+     },
+     {
+       "id": 4,
+       "nome": "Dra. Paula Mendes",
+       "crm": "CRM004",
+       "senha": "senhaD",
+       "especialidade": {
+         "id": 4,
+         "nome": "Pediatria",
+         "descricao": "Especialidade médica que cuida de crianças"
+       }
+     },
+     {
+       "id": 5,
+       "nome": "Dr. Marcos Silva",
+       "crm": "CRM005",
+       "senha": "senhaE",
+       "especialidade": {
+         "id": 5,
+         "nome": "Ortopedia",
+         "descricao": "Especialidade médica que cuida dos ossos"
+       }
+     }
+   ]
+
+   -- Usuario
+   [
+     {
+       "id": 1,
+       "nome": "Alice Martins",
+       "email": "alice.martins@example.com",
+       "senha": "senhaA",
+       "telefone": "11987654321",
+       "endereco": "Rua das Acácias, 123, São Paulo, SP"
+     },
+     {
+       "id": 2,
+       "nome": "Bruno Ferreira",
+       "email": "bruno.ferreira@example.com",
+       "senha": "senhaB",
+       "telefone": "11987654322",
+       "endereco": "Avenida das Palmeiras, 456, São Paulo, SP"
+     },
+     {
+       "id": 3,
+       "nome": "Carla Nunes",
+       "email": "carla.nunes@example.com",
+       "senha": "senhaC",
+       "telefone": "11987654323",
+       "endereco": "Rua das Orquídeas, 789, São Paulo, SP"
+     },
+     {
+       "id": 4,
+       "nome": "Daniel Costa",
+       "email": "daniel.costa@example.com",
+       "senha": "senhaD",
+       "telefone": "11987654324",
+       "endereco": "Avenida das Rosas, 101, São Paulo, SP"
+     },
+     {
+       "id": 5,
+       "nome": "Elisa Lima",
+       "email": "elisa.lima@example.com",
+       "senha": "senhaE",
+       "telefone": "11987654325",
+       "endereco": "Rua das Tulipas, 202, São Paulo, SP"
+     }
+   ]
+
+   --Prontuario
+   [
+     {
+       "id": 1,
+       "registroAgenda": 1001,
+       "codigoPaciente": 2001,
+       "historico": "Paciente com histórico de hipertensão",
+       "receituario": "Losartana 50mg",
+       "exame": "Eletrocardiograma"
+     },
+     {
+       "id": 2,
+       "registroAgenda": 1002,
+       "codigoPaciente": 2002,
+       "historico": "Paciente com histórico de diabetes",
+       "receituario": "Metformina 500mg",
+       "exame": "Hemoglobina glicada"
+     },
+     {
+       "id": 3,
+       "registroAgenda": 1003,
+       "codigoPaciente": 2003,
+       "historico": "Paciente com histórico de asma",
+       "receituario": "Salbutamol spray",
+       "exame": "Espirometria"
+     },
+     {
+       "id": 4,
+       "registroAgenda": 1004,
+       "codigoPaciente": 2004,
+       "historico": "Paciente com histórico de colesterol alto",
+       "receituario": "Sinvastatina 20mg",
+       "exame": "Perfil lipídico"
+     },
+     {
+       "id": 5,
+       "registroAgenda": 1005,
+       "codigoPaciente": 2005,
+       "historico": "Paciente com histórico de hipotireoidismo",
+       "receituario": "Levotiroxina 50mcg",
+       "exame": "TSH"
+     }
+   ]
+
+   --Paciente
+   [
+     {
+       "id": 1,
+       "nome": "Lucas Pereira",
+       "sobrenome": "Silva",
+       "dataNascimento": "1980-01-01",
+       "email": "lucas.silva@example.com",
+       "telefone": "11987654321"
+     },
+     {
+       "id": 2,
+       "nome": "Mariana Oliveira",
+       "sobrenome": "Santos",
+       "dataNascimento": "1985-02-02",
+       "email": "mariana.santos@example.com",
+       "telefone": "11987654322"
+     },
+     {
+       "id": 3,
+       "nome": "Felipe Costa",
+       "sobrenome": "Lima",
+       "dataNascimento": "1990-03-03",
+       "email": "felipe.lima@example.com",
+       "telefone": "11987654323"
+     },
+     {
+       "id": 4,
+       "nome": "Juliana Mendes",
+       "sobrenome": "Almeida",
+       "dataNascimento": "1995-04-04",
+       "email": "juliana.almeida@example.com",
+       "telefone": "11987654324"
+     },
+     {
+       "id": 5,
+       "nome": "Rafael Souza",
+       "sobrenome": "Ferreira",
+       "dataNascimento": "2000-05-05",
+       "email": "rafael.ferreira@example.com",
+       "telefone": "11987654325"
+     }
+   ]

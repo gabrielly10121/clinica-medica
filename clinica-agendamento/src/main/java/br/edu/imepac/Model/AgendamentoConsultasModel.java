@@ -27,4 +27,5 @@ public class AgendamentoConsultasModel {
     private String consultaCancelada;
     private String motivoCancelamento;
     private String retornoConsulta;
+
 }
